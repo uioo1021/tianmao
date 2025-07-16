@@ -1,0 +1,19 @@
+const headerData = {
+    data:[
+        '经络疏通神器',
+        '头皮精华导入梳',
+        '生发电梳',
+        '房屋改造小物件',
+        '旅行必备神器',
+        '桌面化妆镜',
+        '搓澡刷背神器',
+        // '礼盒',
+        // '绝美抓夹',
+        // '刮痧板',
+        // '掏耳勺',
+    ]
+};
+
+export default defineEventHandler(() => {
+    return headerData;
+});
