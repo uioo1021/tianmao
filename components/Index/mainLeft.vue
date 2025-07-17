@@ -22,8 +22,8 @@
           </div> 
         </div>
 
-        <div class="z-20  border-[rgb(255,0,54)] rounded-2xl max-h-[600px] overflow-y-auto scrollbar-custom  border-2 bg-white w-[600px] absolute left-[204px] top-[0px] opacity-0 invisible group-hover:opacity-100 group-hover:visible ">
-          <div class="ml-4 pr-4 mt-4">
+        <div class="z-20  border-[rgb(255,0,54)] rounded-2xl  border-2 bg-white w-[600px] absolute left-[204px] group-hover:opacity-100 group-hover:visible top-[0px] opacity-0 invisible  ">
+          <div class="ml-4 my-4 w-[550px] max-h-[600px] overflow-y-auto scrollbar-custom ">
             <div class="flex flex-row mt-4" v-for="(arrItem, arrIndex) in item.arr" :key="arrIndex">
               <div class="hover:text-[rgb(255,0,54)] cursor-pointer w-1/5 flex-row flex">
                 <span>{{ arrItem.name }}</span>
@@ -66,7 +66,8 @@ const getIconComponent = (iconName: string) => {
 /* 自定义滚动条样式 */
 :deep(.scrollbar-custom::-webkit-scrollbar) {
     width: 6px;
-    
+    position: relative; 
+    left: 0; 
 }
 :deep(.scrollbar-custom::-webkit-scrollbar-track) {
     background: transparent;

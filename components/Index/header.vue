@@ -1,7 +1,7 @@
 <template>
-    <div class="cursor-pointer h-[50px] flex justify-between text-[12px] whitespace-nowrap ">
-        <div class="flex items-center ">
-            <div class="flex ml-10 text-[rgb(255,0,54)]">亲，请登录</div>
+    <div class="cursor-pointer h-[50px]  flex justify-between text-[12px] whitespace-nowrap ">
+        <div class="flex items-center mb-2 mr-[100px]">
+            <div class="flex ml-10  text-[rgb(255,0,54)]">亲，请登录</div>
             <div class="flex ml-2 hover:text-[rgb(255,0,54)]">免费注册</div>
             <div class="flex ml-4 hover:text-[rgb(255,0,54)]">网页无障碍</div>                                                                                                                                                                                                                                   
         </div>

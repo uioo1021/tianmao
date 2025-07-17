@@ -1,13 +1,13 @@
 <template>
-    <div class="cursor-pointer mt-[5px] flex w-[1000px] mx-auto sticky top-0 bg-white z-30">
-        <a href="https://www.tmall.com/?spm=a21bo.tmall/a.201857.1.1778c3d5oXRrYY" target="_blank" class="ml-5 mt-3">
+    <div class="cursor-pointer mt-[5px] flex mx-auto min-res-80:w-[1500px]  min-res-100:w-[1500px]  w-[1595px] min-res-120:w-[1000px] min-res-110:w-[1190px] sticky top-0 bg-white z-30">
+        <a href="https://www.tmall.com/?spm=a21bo.tmall/a.201857.1.1778c3d5oXRrYY" target="_blank" class="ml-5 mt-3 ">
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01Se8pZU1ruzNvEEwH9_!!6000000005692-2-tps-480-144.png" alt="天猫" class="header-img w-[230px]"/>
         </a>
 
         <form class="mt-3" @submit.prevent="handleSearch">
             <div class="flex h-[44px] relative">
                 <input  
-                    class="caret-[black] pl-[95px] pr-[30px] py-[5px] text-[12px] focus:outline-none border-[2px] border-[rgb(255,0,54)] rounded-[12px]  w-[496px]"
+                    class=" caret-[black] bg-white  pl-[95px] pr-[30px] py-[5px] text-[12px] focus:outline-none border-[2px] border-[rgb(255,0,54)] rounded-[12px]  min-res-120:w-[496px] min-res-110:w-[750px]  w-[1010px] "
                     type="text"
                     @focus="showSearch=true"
                     @blur="handleBlur"  
@@ -20,7 +20,7 @@
                     @mouseleave="showSearch = false"
                     ref="dropdownRef"
                     tabindex="-1"
-                    class="z-10 absolute top-[33px] right-[0px] text-[12px] border-[2px] rounded-xl border-[rgb(255,0,54)] rounded-tr-none rounded-tl-none border-t-0 flex flex-col w-[496px] bg-white"
+                    class="z-10 absolute top-[33px] right-[0px] text-[12px] border-[2px] rounded-xl border-[rgb(255,0,54)] rounded-tr-none rounded-tl-none border-t-0 flex flex-col min-res-120:w-[496px] min-res-110:w-[750px]  w-[1010px] bg-white"
                 >
                     
                     <div v-if="searchHistory.length > 0" class="border-b border-gray-100 pb-2">
@@ -71,12 +71,20 @@
                     </div>
                 </div>
 
-                <div class="pr-4 border-r-[1px] absolute left-5 top-[10px] flex">
-                    <span>天猫</span>
-                    <Downicon class="h-3 w-3 mt-[6px] ml-[2px]" />
+                <div class=" absolute left-[2px] top-[10px] flex text-[14px]">
+                    <div @mouseenter="isShow=true" @mouseleave="isShow=false" class="flex pl-4 mb-10 rounded-lg rounded-tr-none bg-white w-[76px] rounded-br-none">
+                        <span>{{ aText }}</span>
+                        <Downicon class="h-3 w-3 mt-[6px] ml-[2px]" />
+                        <div v-show="isShow" class=" flex flex-col w-[75px] left-[0px] rounded-lg shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),_0_4px_6px_-2px_rgba(0,0,0,0.05)] bg-white rounded-t-none absolute z-50 top-[20px]">
+                            <span @click="swapBText()" class="hover:text-[rgb(255,0,54)] ml-[19px] mt-3">{{ bText }}</span>
+                            <span @click="swapCText()" class="hover:text-[rgb(255,0,54)] ml-[19px] mt-3 mb-3">{{ cText }}</span>
+                        </div>
+                    </div>
                 </div>
+                
+                <span class="absolute left-[76px] top-[12px] text-[rgba(80,96,122,0.2)] text-[12px]"> | </span> 
 
-                <div class="flex absolute top-[6px] left-[381px]">
+                <div class="flex absolute top-[6px] min-res-120:left-[381px] min-res-110:left-[640px] left-[895px]">
                     <svg class="w-8 h-8 hover:text-[rgb(255,0,54)] fill-current flex" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1"  viewBox="0 0 28 28">
                         <g>
                             <g>
@@ -86,7 +94,7 @@
                     </svg>
                 </div>
                 
-                <div  @click="handleSearch" class="z-10 absolute left-[421px] cursor-pointer mt-[4px] h-[35px] flex w-[70px] bg-[rgb(255,0,54)] text-white pl-5 rounded-lg font-bold items-center" >
+                <div  @click="handleSearch" class="min-res-110:left-[675px] left-[935px] z-10 absolute min-res-120:left-[421px] cursor-pointer mt-[4px] h-[35px] flex w-[70px] bg-[rgb(255,0,54)] text-white pl-5 rounded-lg font-bold items-center" >
                     搜索
                 </div>
             </div>
@@ -220,10 +228,29 @@ const clearHistory = () => {
 
 const delAll = ref(false)
 
+const aText = ref('天猫')
+const bText = ref('宝贝')
+const cText = ref('店铺')
+const isShow = ref(false)
+
+const swapBText= () => {
+    const temp = aText.value
+    aText.value = bText.value
+    bText.value = temp
+    isShow.value = false
+}
+
+const swapCText = () => {
+    const temp = aText.value
+    aText.value = cText.value
+    cText.value = temp
+    isShow.value = false
+}
+
 </script>
 
 <style scoped>
 .header-img:sticky{
     width:100px;
 }
-</style>    
+</style>   
