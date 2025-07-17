@@ -1,6 +1,6 @@
 <template>
     <div class="flex cursor-pointer flex-col">
-        <div class="min-res-120:w-[496px] min-res-110:w-[752px] w-[1008px] h-[48px] whitespace-nowrap  bg-[rgb(247,247,247)] rounded-xl flex">
+        <div class="min-res-120:w-[496px] min-res-110:w-[752px] w-[1008px] h-[48px] justify-center whitespace-nowrap  bg-[rgb(247,247,247)] rounded-xl flex">
             <div class="ml-7 min-res-110:ml-12 h-48px items-center justify-center flex">
                 <a class="border-r-2 pr-8 font-bold text-[rgb(255,0,54)]" href="https://www.taobao.com/" target="_blank">淘宝首页</a>
             </div>

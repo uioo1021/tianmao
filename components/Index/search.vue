@@ -1,9 +1,8 @@
 <template>
-    <div class="cursor-pointer mt-[5px] flex mx-auto min-res-80:w-[1500px]  min-res-100:w-[1500px]  w-[1595px] min-res-120:w-[1000px] min-res-110:w-[1190px] sticky top-0 bg-white z-30">
+    <div class="cursor-pointer mt-[5px] flex  sticky top-0 bg-white z-30">
         <a href="https://www.tmall.com/?spm=a21bo.tmall/a.201857.1.1778c3d5oXRrYY" target="_blank" class="ml-5 mt-3 ">
             <img src="https://img.alicdn.com/imgextra/i4/O1CN01Se8pZU1ruzNvEEwH9_!!6000000005692-2-tps-480-144.png" alt="天猫" class="header-img w-[230px]"/>
         </a>
-
         <form class="mt-3" @submit.prevent="handleSearch">
             <div class="flex h-[44px] relative">
                 <input  
@@ -99,7 +98,7 @@
                 </div>
             </div>
             <div  class="text-[10px] space-x-2 ml-4 text-[rgb(122,122,122)] mt-2">
-                <a v-for="item in rowData?.data" :key="item" :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="hover:text-[rgb(255,0,54)]">{{item}}</a>
+                <a v-for="item in displayData" :key="item" :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="hover:text-[rgb(255,0,54)]">{{item}}</a>
             </div>
         </form>
 
@@ -247,6 +246,51 @@ const swapCText = () => {
     isShow.value = false
 }
 
+//不能实时更新
+// const displayData = computed(() => {
+//     if (!rowData?.value?.data || rowData?.value?.data.length === 0) return []
+//     if (import.meta.client) {
+//         let cnt = 0
+//         if (window.matchMedia('(min-resolution: 120dpi)').matches) cnt = 7
+//         else cnt = rowData?.value?.data.length
+//         return rowData?.value?.data.slice(0, cnt)
+//     }
+// })
+
+// 是否是120dpi以上
+const isHighDensity = ref(false)
+
+// 监听屏幕分辨率变化
+let mediaQuery: MediaQueryList | null = null
+
+onMounted(() => {
+    if (typeof window !== 'undefined') {
+        // 检测测最小分辨率120dpi
+        mediaQuery = window.matchMedia('(min-resolution: 120dpi)')
+        isHighDensity.value = mediaQuery.matches
+        
+        // 添加监听器 
+        const handler = (event: MediaQueryListEvent) => {
+            isHighDensity.value = event.matches
+        }
+        
+        mediaQuery.addEventListener('change', handler)
+    }
+})
+
+// 清理监听器
+onUnmounted(() => {
+    if (mediaQuery) {
+        mediaQuery.removeEventListener('change', () => {})
+    }
+})
+
+const displayData = computed(() => {
+    if (!rowData?.value?.data || rowData?.value?.data.length === 0) return []
+    const cnt = isHighDensity.value ? 7 : rowData.value.data.length
+    return rowData.value.data.slice(0, cnt)
+})
+
 </script>
 
 <style scoped>
@@ -254,3 +298,4 @@ const swapCText = () => {
     width:100px;
 }
 </style>   
+

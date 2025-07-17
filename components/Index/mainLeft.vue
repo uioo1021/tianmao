@@ -22,14 +22,14 @@
           </div> 
         </div>
 
-        <div class="z-20  border-[rgb(255,0,54)] rounded-2xl  border-2 bg-white w-[600px] absolute left-[204px] group-hover:opacity-100 group-hover:visible top-[0px] opacity-0 invisible  ">
-          <div class="ml-4 my-4 w-[550px] max-h-[600px] overflow-y-auto scrollbar-custom ">
+        <div class="z-20  border-[rgb(255,0,54)] rounded-2xl min-res-120:w-[545px] w-[1058px] min-res-110:w-[800px] border-2 bg-white absolute left-[204px] group-hover:opacity-100 group-hover:visible top-[0px] opacity-0 invisible  ">
+          <div class="ml-4 my-4 min-res-120:w-[520px] min-res-110:w-[770px] w-[990px]  max-h-[570px] overflow-y-auto scrollbar-custom ">
             <div class="flex flex-row mt-4" v-for="(arrItem, arrIndex) in item.arr" :key="arrIndex">
-              <div class="hover:text-[rgb(255,0,54)] cursor-pointer w-1/5 flex-row flex">
+              <div class="hover:text-[rgb(255,0,54)] cursor-pointer whitespace-nowrap  flex-row flex">
                 <span>{{ arrItem.name }}</span>
                 <Righticon class="h-[10px] mt-2 ml-1 w-[10px]" />
               </div>
-              <div class="flex max-w-[400px] gap-x-4 flex-wrap gap-y-4 pl-10">
+              <div class="flex flex-wrap   gap-x-4 gap-y-4 pl-10">
                 <span class="flex whitespace-nowrap cursor-pointer hover:text-[rgb(255,0,54)]" v-for="(arr2Item,arr2Index) in arrItem.arr" :key="arr2Index">{{ arr2Item }}</span>
               </div>
             </div>

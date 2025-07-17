@@ -1,5 +1,5 @@
 <template>
-    <div class="cursor-pointer flex flex-row  mt-4 mx-auto min-res-110:w-[1200px] min-res-80:w-[1500px] w-[1600px] min-res-120:w-[1000px] min-res-100:w-[1500px]">
+    <div class="cursor-pointer flex  mt-4 ">
         <div class="flex w-12 h-12 rounded-full bg-[rgb(255,241,235)]">
             <img class="w-12 h-12" src="https://gw.alicdn.com/imgextra/i2/O1CN011E0R1J23w9lJDeJXk_!!6000000007319-2-tps-192-192.png"/>
         </div>
@@ -11,5 +11,6 @@
     <div></div>
 </template>
 <script setup lang="ts">
+
 
 </script>
