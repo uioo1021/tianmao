@@ -1,4 +1,4 @@
-const headerData = {
+const Data = {
     data:[
         '经络疏通神器',
         '头皮精华导入梳',
@@ -15,5 +15,5 @@ const headerData = {
 };
 
 export default defineEventHandler(() => {
-    return headerData;
+    return Data;
 });

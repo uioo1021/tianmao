@@ -14,23 +14,23 @@
         <div class="flex items-center text-[14px]">
           <component class="flex w-4 h-4 mr-2" :is="getIconComponent(item.icon)" />
           <div class="flex justify-between items-center">
-            <span class="mr-2 hover:text-[rgb(255,0,54)]">{{ item.name1 }}</span>
+            <a :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name1)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="mr-2 hover:text-[rgb(255,0,54)]">{{ item.name1 }}</a>
             /
-            <span class="mr-2 ml-2 hover:text-[rgb(255,0,54)]">{{ item.name2 }}</span>
+            <a :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name2)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="mr-2 ml-2 hover:text-[rgb(255,0,54)]">{{ item.name2 }}</a>
             /
-            <span class="ml-2 hover:text-[rgb(255,0,54)]">{{ item.name3 }}</span>
+            <a :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name3)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="ml-2 hover:text-[rgb(255,0,54)]">{{ item.name3 }}</a>
           </div> 
         </div>
 
-        <div class="z-20  border-[rgb(255,0,54)] rounded-2xl min-res-120:w-[545px] w-[1058px] min-res-110:w-[800px] border-2 bg-white absolute left-[204px] group-hover:opacity-100 group-hover:visible top-[0px] opacity-0 invisible  ">
+        <div class="z-20  border-[rgb(255,0,54)] rounded-2xl min-res-120:w-[549px] w-[1060px] min-res-110:w-[805px] border-2 bg-white absolute left-[204px] group-hover:opacity-100 group-hover:visible top-[0px] opacity-0 invisible  ">
           <div class="ml-4 my-4 min-res-120:w-[520px] min-res-110:w-[770px] w-[990px]  max-h-[570px] overflow-y-auto scrollbar-custom ">
             <div class="flex flex-row mt-4" v-for="(arrItem, arrIndex) in item.arr" :key="arrIndex">
               <div class="hover:text-[rgb(255,0,54)] cursor-pointer whitespace-nowrap  flex-row flex">
-                <span>{{ arrItem.name }}</span>
+                <a :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(arrItem.name)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank">{{ arrItem.name }}</a>
                 <Righticon class="h-[10px] mt-2 ml-1 w-[10px]" />
               </div>
               <div class="flex flex-wrap   gap-x-4 gap-y-4 pl-10">
-                <span class="flex whitespace-nowrap cursor-pointer hover:text-[rgb(255,0,54)]" v-for="(arr2Item,arr2Index) in arrItem.arr" :key="arr2Index">{{ arr2Item }}</span>
+                <a :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(arr2Item)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="flex whitespace-nowrap cursor-pointer hover:text-[rgb(255,0,54)]" v-for="(arr2Item,arr2Index) in arrItem.arr" :key="arr2Index">{{ arr2Item }}</a>
               </div>
             </div>
           </div>

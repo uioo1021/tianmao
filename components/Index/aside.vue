@@ -1,5 +1,5 @@
 <template>
-    <div class=" cursor-pointer bg-white border-l border-y rounded-md rounded-r-none top-1/2 flex-col right-[0px] fixed h-[192px] w-[32px]">
+    <div class=" cursor-pointer bg-white border-l border-y rounded-md rounded-r-none top-[35%] flex-col right-[0px] fixed h-[192px] w-[32px]">
         <div class="w-[32px] h-[32px] flex justify-center items-center mt-1">
             <img class="h-6 w-6" src="https://gw.alicdn.com/imgextra/i4/O1CN0165n4Cr1CGK2faBVbj_!!6000000000053-1-tps-56-56.gif">
         </div>

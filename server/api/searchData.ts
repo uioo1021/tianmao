@@ -1,4 +1,4 @@
-const headerData = {
+const Data = {
     data:[
         '男童酷帅夏装',
         '小众独特连衣裙',
@@ -36,5 +36,5 @@ const headerData = {
 };
 
 export default defineEventHandler(() => {
-    return headerData;
+    return Data;
 });
