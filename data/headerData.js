@@ -1,4 +1,4 @@
-const headerData = {
+export const headerData = {
     data:[
         {
             name: '淘宝网首页',
@@ -57,8 +57,4 @@ const headerData = {
             href: 'https://consumerservice.taobao.com/?spm=a21bo.tmall/a.tm-cco-center.1.3c5cc3d58kL0CB'
         }
     ]
-};
-
-export default defineEventHandler(() => {
-    return headerData;
-});
+}

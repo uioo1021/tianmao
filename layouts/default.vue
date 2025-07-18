@@ -1,16 +1,11 @@
 <template>
-    <div class="min-h-screen flex justify-center">
-        <div class="bg-white">
+    <div class="flex justify-center">
+        <div class="w-full justify-center flex flex-col">
             <Header />
-            <div class="mx-auto px-16">
-                <Search/>
-                <Main />
-                <Bottom />
-                <Show/>
-            </div>
-            <Aside />
+            <slot class="mx-auto px-16"/>
+            <Aside/>
+            <Bottom/>
         </div>
+        
     </div>
-</template>
-
-
+</template> 

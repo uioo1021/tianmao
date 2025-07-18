@@ -1,6 +1,4 @@
-import { isValidValue } from "element-plus/es/components/tree-select/src/utils.mjs";
-
-const Data = {
+export const listData = {
     data: [
         {
             name1: "电脑 ",
@@ -339,8 +337,4 @@ const Data = {
             ]
         }
     ]
-};
-
-export default defineEventHandler(() => {
-    return Data;
-});
+}

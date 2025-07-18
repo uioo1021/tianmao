@@ -1,4 +1,4 @@
-const Data = {
+export const searchData = {
     data:[
         '男童酷帅夏装',
         '小众独特连衣裙',
@@ -33,8 +33,4 @@ const Data = {
         '防密脱生发梳',
         '七星漂线组'
     ]
-};
-
-export default defineEventHandler(() => {
-    return Data;
-});
+}

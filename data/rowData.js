@@ -1,4 +1,4 @@
-const Data = {
+export const rowData = {
     data:[
         '经络疏通神器',
         '头皮精华导入梳',
@@ -12,8 +12,4 @@ const Data = {
         '刮痧板',
         '掏耳勺',
     ]
-};
-
-export default defineEventHandler(() => {
-    return Data;
-});
+}

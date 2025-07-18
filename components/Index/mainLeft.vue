@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-const { data: listData } = await useFetch('/api/listData');
+import {listData} from '~/data/listData.js'
 
 const getIconComponent = (iconName: string) => {
     const components = {
