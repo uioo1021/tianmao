@@ -1,5 +1,5 @@
 <template>
-        <Search/>
+        <Search class="" />
         <Main />
         <Icon />
         <Show class="justify-center w-full"/>
@@ -7,4 +7,3 @@
 <script lang="ts" setup>
 
 </script> 
-

@@ -1,6 +1,6 @@
 <template>
-<div class="flex justify-center">
-    <div class="cursor-pointer h-[50px] flex justify-between text-[12px] whitespace-nowrap  min-res-120:w-[1156px] w-[1624px] min-res-110:w-[1423px]">
+<div class="flex justify-center  bg-white">
+    <div class="cursor-pointer h-[50px] flex bg-white justify-between text-[12px] whitespace-nowrap  min-res-120:w-[1156px] w-[1624px] min-res-110:w-[1423px]">
         <div class="flex items-center mb-2 mr-[100px]">
             <a href="https://login.taobao.com/havanaone/login/login.htm?bizName=taobao&spm=a21bo.tmall/a.754894437.1.3c5cc3d5KaAMPU&f=top&redirectURL=https%3A%2F%2Fwww.tmall.com%2F%3Fspm%3Da21bo.tmall%2Fa.201857.1.1778c3d5oXRrYY" target="_blank" class="flex  text-[rgb(255,0,54)]">亲，请登录</a>
             <a href="https://reg.taobao.com/havanaone/register/register.htm?bizEntrance=person_pc&bizName=taobao&regBizSource=tbtop" target="_blank" class="flex ml-2 hover:text-[rgb(255,0,54)]">免费注册</a>

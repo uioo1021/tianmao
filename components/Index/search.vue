@@ -1,10 +1,13 @@
 <template>
-    <div class="flex justify-center sticky top-0 bg-white z-30">
-        <div class="pr-[256px] cursor-pointer mt-[5px] flex  min-res-120:w-[1008px] w-[1516px] min-res-110:w-[1269px] justify-center   bg-white ">
-            <a href="https://www.tmall.com/?spm=a21bo.tmall/a.201857.1.1778c3d5oXRrYY" target="_blank" class="ml-5 mt-3 ">
-                <img src="https://img.alicdn.com/imgextra/i4/O1CN01Se8pZU1ruzNvEEwH9_!!6000000005692-2-tps-480-144.png" alt="天猫" class="header-img w-[230px]"/>
+    <div class="flex justify-center sticky top-0 bg-white z-[30]">
+        <div class="cursor-pointer mt-[5px] flex bg-white min-res-120:w-[1000px] w-[1514px] min-res-110:w-[1254px] min-w-[978px]">
+            <a href="https://www.tmall.com/?spm=a21bo.tmall/a.201857.1.1778c3d5oXRrYY" target="_blank" class=" mt-3 ml-1.5">
+                <div>
+                    <img src="https://img.alicdn.com/imgextra/i4/O1CN01Se8pZU1ruzNvEEwH9_!!6000000005692-2-tps-480-144.png" alt="天猫" class="w-[240px] min-w-[240px] max-w-full h-auto"/>
+                </div>
+                
             </a>
-            <form class="mt-3 ml-1" @submit.prevent="handleSearch">
+            <form class=" mt-3 ml-1" @submit.prevent="handleSearch">
                 <div class="flex h-[44px] relative">
                     <input  
                         class=" caret-[black] bg-white  pl-[95px] pr-[150px] py-[5px] text-[12px] focus:outline-none border-[2px] border-[rgb(255,0,54)] rounded-[12px]  min-res-120:w-[496px] min-res-110:w-[754px]  w-[1010px] "
@@ -107,14 +110,13 @@
                         搜索
                     </div>
                 </div>
-                <div  class="text-[10px] space-x-2 ml-4 text-[rgb(122,122,122)] mt-2">
+                <div class="text-[10px] space-x-2 ml-4 text-[rgb(122,122,122)] mt-2">
                     <a v-for="item in displayData" :key="item" :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="hover:text-[rgb(255,0,54)]">{{item}}</a>
                 </div>
             </form>
 
         </div> 
     </div>
-    
 </template>
 
 <script setup lang="ts">
@@ -302,11 +304,9 @@ const displayData = computed(() => {
     return rowData.data.slice(0, cnt)
 })
 
+
 </script>
 
 <style scoped>
-.header-img:sticky{
-    width:100px;
-}
 </style>   
 

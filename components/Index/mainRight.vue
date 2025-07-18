@@ -86,14 +86,14 @@
 <script setup lang="ts">
 const currentTime = ref(new Date().getHours())
 const timeText = computed(() => {
-    if (currentTime.value >= 5 && currentTime.value < 12) {
+    if (currentTime.value >= 0 && currentTime.value < 12) {
         return '早上好'
     }
     else if (currentTime.value >= 12 && currentTime.value < 14) {
         return '中午好'
     } else if (currentTime.value >= 14 && currentTime.value < 18) {
         return '下午好'
-    } else if (currentTime.value >= 18 && currentTime.value < 5) {
+    } else if (currentTime.value >= 18 && currentTime.value <= 24) {
         return '晚上好'
     }
 })
