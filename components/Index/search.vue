@@ -161,19 +161,18 @@ const rightColumnItems = computed(() => {
 
 const timeSet = ref<NodeJS.Timeout | null>(null)
 const dropdownRef = ref<HTMLDivElement | null>(null)
-// 处理输入框失焦
+
 const handleBlur = () => {
-    // 使用 setTimeout 延迟检查，确保点击事件已处理
     timeSet.value = setTimeout(() => {
-        // 检查点击目标是否在下拉框内部
-        const isClickInsideDropdown = dropdownRef.value?.contains(document.activeElement);
+        //点击目标是否在下拉框内部
+        const isClick= dropdownRef.value?.contains(document.activeElement)
         
         // 如果点击不在下拉框内，则隐藏下拉框
-        if (!isClickInsideDropdown) {
+        if (!isClick) {
             showSearch.value = false
         }
-    }, 150); // 延迟150ms，足够让点击事件完成
-};
+    }, 150) // 延迟150ms，足够让点击事件完成
+}
 
 const clearTimeoutSet = () => {
     if (timeSet.value) {
@@ -283,11 +282,10 @@ let mediaQuery: MediaQueryList | null = null
 
 onMounted(() => {
     if (typeof window !== 'undefined') {
-        // 检测测最小分辨率120dpi
+
         mediaQuery = window.matchMedia('(min-resolution: 120dpi)')
         isHighDensity.value = mediaQuery.matches
         
-        // 添加监听器 
         const handler = (event: MediaQueryListEvent) => {
             isHighDensity.value = event.matches
         }
@@ -296,7 +294,6 @@ onMounted(() => {
     }
 })
 
-// 清理监听器
 onUnmounted(() => {
     if (mediaQuery) {
         mediaQuery.removeEventListener('change', () => {})
