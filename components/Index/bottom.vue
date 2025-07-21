@@ -4,7 +4,7 @@
         
         <div class="pt-8 text-[12px]">
             
-            <div class="flex flex-row min-res-120:gap-x-[200px] min-res-110:gap-x-[250px] gap-x-[300px] ">
+            <div class="flex flex-row  min-res-120:gap-x-[200px] min-res-110:gap-x-[250px] gap-x-[300px] ">
                 <div class="flex flex-col space-y-2">
                     <span>天猫保障</span>
                     <a class="text-[#7a7a7a] hover:text-[rgb(255,0,54)]" href="" target="_blank">天猫售后</a>

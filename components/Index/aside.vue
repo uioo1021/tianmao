@@ -1,8 +1,6 @@
 <template>
     <div class=" cursor-pointer z-[50] bg-white border-l border-y rounded-md rounded-r-none top-[35%] flex-col right-[0px] fixed h-[192px] w-[38px]">
         <div>
-
-
             <a href="https://pc.taobao.com/?spm=a21bo.tmall/a.20220530.1.1a1dc3d5McfVIy&channel=tmall" target="_blank" class="w-[32px] ml-0.5 h-[32px] flex rounded-lg hover:bg-[rgba(180,180,180,0.2)] justify-center items-center mt-1 relative group">
                 <img class="h-6 w-6" src="https://gw.alicdn.com/imgextra/i4/O1CN0165n4Cr1CGK2faBVbj_!!6000000000053-1-tps-56-56.gif">
                 <div class="absolute left-[-85px] flex">
@@ -68,10 +66,10 @@
 </template>
 <script setup lang="ts">
 const isVisible = ref(false)
-const scrollThreshold = ref(600) // 滚动阈值，超过此距离显示
+const scrollValue = ref(600) // 滚动阈值，超过此距离显示
 
 const handleScroll = () => {
-    isVisible.value = window.scrollY > scrollThreshold.value
+    isVisible.value = window.scrollY > scrollValue.value
 }
 
 // 滚动到顶部
@@ -92,5 +90,4 @@ onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
 })
 
-watch(scrollThreshold, handleScroll)
 </script>

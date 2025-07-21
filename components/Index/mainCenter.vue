@@ -78,7 +78,7 @@
                     <div class="flex justify-between mt-4 mx-4">
                         <img class="w-24 h-24" src="https://img.alicdn.com/bao/upload/O1CN01Xw0lUE1iPzownoVGb_!!6000000004406-2-yinhe.png"/>
                         <div class="space-x-2 space-y-2">
-                            <span class=" font-thin text-[14px] overflow-hidden line-clamp-2 w-[100px] leading-[22px] text-ellipsis ">【Gree/格力官方】新一级3匹变频冷暖客厅节能立式空调柜机云颜</span>
+                            <span class=" font-thin text-[14px] overflow-hidden line-clamp-2 leading-[22px] t w-[100px]">【Gree/格力官方】新一级3匹变频冷暖客厅节能立式空调柜机云颜</span>
                             <div class="font-thin text-[rgb(255,0,54)] justify-center items-center rounded-md w-14 h-5 bg-[rgba(255,0,54,0.082)] flex text-[10px]">已补1900元</div>
                             <div class="text-[rgb(255,0,54)] font-bold">¥9399</div>
                         </div>
@@ -230,11 +230,6 @@
                 </a>
             </div>
         </div>
-        
-        <div class="flex-row min-res-110:flex hidden space-x-4">
-
-        </div>
-        
     </div>
 </template>
 <script setup lang="ts">

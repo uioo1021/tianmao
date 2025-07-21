@@ -91,23 +91,23 @@ const timeText = computed(() => {
     }
     else if (currentTime.value >= 12 && currentTime.value < 14) {
         return '中午好'
-    } else if (currentTime.value >= 14 && currentTime.value < 18) {
+    }
+    else if (currentTime.value >= 14 && currentTime.value < 18) {
         return '下午好'
-    } else if (currentTime.value >= 18 && currentTime.value <= 24) {
+    }
+    else if (currentTime.value >= 18 && currentTime.value <= 24) {
         return '晚上好'
     }
 })
 
 // 每秒更新一次时间
 onMounted(() => {
-
     const time = setInterval(() => {
         currentTime.value = new Date().getHours()
     }, 1000)
 
-
-    onUnmounted(() => {
-        clearInterval(time)
-    })
+onUnmounted(() => {
+    clearInterval(time)
+})
 })
 </script>

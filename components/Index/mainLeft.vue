@@ -5,7 +5,6 @@
         <span class="text-white font-bold">分类</span>
         <span class="popup-animation bg-white text-[8px] items-center font-bold rounded-sm ml-2 text-[rgb(255,0,54)] justify-center w-[26px] inline-flex h-[10px]">NEW</span>
       </div>
-      
       <div 
         v-for="(item, index) in listData?.data" 
         :key="index"  
@@ -22,7 +21,7 @@
           </div> 
         </div>
 
-        <div class="z-20  border-[rgb(255,0,54)] rounded-2xl min-res-120:w-[549px] w-[1060px] min-res-110:w-[805px] border-2 bg-white absolute left-[204px] group-hover:opacity-100 group-hover:visible top-[0px] opacity-0 invisible  ">
+        <div class="z-20  border-[rgb(255,0,54)] rounded-2xl min-res-120:w-[549px] w-[1060px] min-res-110:w-[805px] border-2 bg-white absolute left-[204px] group-hover:opacity-100 group-hover:visible top-[0px] opacity-0 invisible">
           <div class="ml-4 my-4 min-res-120:w-[520px] min-res-110:w-[770px] w-[990px]  max-h-[570px] overflow-y-auto scrollbar-custom ">
             <div class="flex flex-row mt-4" v-for="(arrItem, arrIndex) in item.arr" :key="arrIndex">
               <div class="hover:text-[rgb(255,0,54)] cursor-pointer whitespace-nowrap  flex-row flex">
@@ -41,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-import {listData} from '~/data/listData.js'
+import { listData } from '~/data/listData.js'
 
 const getIconComponent = (iconName: string) => {
     const components = {
@@ -60,14 +59,13 @@ const getIconComponent = (iconName: string) => {
     return (components as Record<string, any>)[iconName];
 }
 
+
 </script>
 
 <style scoped>
 /* 自定义滚动条样式 */
 :deep(.scrollbar-custom::-webkit-scrollbar) {
     width: 6px;
-    position: relative; 
-    left: 0; 
 }
 :deep(.scrollbar-custom::-webkit-scrollbar-track) {
     background: transparent;
@@ -76,7 +74,6 @@ const getIconComponent = (iconName: string) => {
     background-color:rgb(139,139,139);
     border-radius: 3px;
 }
-
 
 @keyframes popup {
   0% {
@@ -94,6 +91,6 @@ const getIconComponent = (iconName: string) => {
 }
 
 .popup-animation {
-  animation: popup 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  animation: popup 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
 </style>

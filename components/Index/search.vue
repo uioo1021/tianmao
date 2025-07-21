@@ -5,7 +5,6 @@
                 <div>
                     <img src="https://img.alicdn.com/imgextra/i4/O1CN01Se8pZU1ruzNvEEwH9_!!6000000005692-2-tps-480-144.png" alt="天猫" class="w-[240px] min-w-[240px] max-w-full h-auto"/>
                 </div>
-                
             </a>
             <form class=" mt-3 ml-1" @submit.prevent="handleSearch">
                 <div class="flex h-[44px] relative">
@@ -17,15 +16,13 @@
                         v-model="searchText"  
                         @keyup.enter="handleSearch()"
                     />
-
                     <div 
                         v-if="showSearch" 
-                        @mouseleave="showSearch = false"
+                        @mouseleave="showSearch = false , isExpanded = false,delAll=false"
                         ref="dropdownRef"
                         tabindex="-1"
                         class="z-10 absolute top-[33px] right-[0px] text-[12px] border-[2px] rounded-xl border-[rgb(255,0,54)] rounded-tr-none rounded-tl-none border-t-0 flex flex-col min-res-120:w-[496px] min-res-110:w-[754px]  w-[1010px] bg-white"
                     >
-                        
                         <div v-if="searchHistory.length > 0" class="border-b border-gray-100 pb-2">
                             <div class="flex justify-between items-center mx-2 mt-4 mb-2">
                                 <div class="text-[rgb(122,122,122)]">历史搜索</div>
@@ -33,24 +30,31 @@
                                     <Delicon class="h-3 w-3 mt-0.5 mr-1"/>
                                     <div  class=" cursor-pointer" >清除</div>
                                 </div>
-                                
                                 <div v-show="delAll"  class="text-[rgb(122,122,122)] ">
                                     <span @click="clearHistory()" class="border-r border-1 hover:text-[rgb(255,0,54)] border-[rgb(122,122,122)] pr-2">清除全部</span>
                                     <span @click="delAll=false" class="pl-2 hover:text-[rgb(255,0,54)]">完成</span>
                                 </div>
                             </div>
-                            <div class="flex flex-wrap gap-2 mx-2">
-                                <div 
-                                    v-for="(item, index) in searchHistory" 
-                                    :key="index" 
-                                    class="px-2 py-2 rounded-md hover:text-[rgb(255,0,54)] hover:border-[rgb(255,0,54)] border cursor-pointer flex items-center"
-                                    @click="selectHistory(item)"
-                                >
-                                    {{ item }}
-                                    <!-- 阻止事件冒泡 -->
-                                    <span v-if="delAll" class="ml-1" @click.stop="deleteHistory(index)">&times;</span> 
-                                </div>
+                            <div class="history-container flex" ref="historyContainer">
+                                <div class="overflow-hidden flex flex-wrap gap-2 mx-2 relative" :class="isExpanded ? 'max-h-none' : 'max-h-[40px]'">
+                                    <div v-show="showToggle && !isExpanded"  @click="toggleExpanded" class="min-res-120:left-[440px] min-res-110:left-[695px] left-[950px] absolute px-2 py-[9px] rounded-md bg-white hover:bg-[rgba(180,180,180,0.2)] border cursor-pointer flex items-center">
+                                        <Downicon class="w-4 h-4"/>
+                                    </div>
+                                    <div :class="{'mr-16': showToggle}" class="flex flex-row flex-wrap gap-x-2 gap-y-2">
+                                        <div 
+                                            v-for="(item, index) in searchHistory" 
+                                            :key="index" 
+                                            class="px-2 py-2 rounded-md hover:text-[rgb(255,0,54)] hover:border-[rgb(255,0,54)] border cursor-pointer flex items-center"
+                                            @click="selectHistory(item)"
+                                        >
+                                            {{ item }}
+                                            <!-- 阻止事件冒泡 -->
+                                            <span v-if="delAll" class="ml-1" @click.stop="deleteHistory(index)">&times;</span> 
+                                        </div>
+                                    </div>
                             </div>
+                            </div>
+                            
                         </div>
 
                         <div class="flex cursor-pointer justify-between mx-2 mt-2 items-center mb-2 text-[rgb(122,122,122)]">
@@ -131,8 +135,8 @@ import { rowData } from '~/data/rowData.js'
 // 切换到下一组数据
 const handleChange = () => {
     showSearch.value = true
-    if (Array.isArray(searchData.data) && searchData.data.length > 0) {
-        // 组数
+    if (searchData.data && searchData.data.length > 0) {
+        // 组数，向上取整
         const totalPages = Math.ceil(searchData.data.length / itemsPerPage)
         currentPage.value = (currentPage.value + 1) % totalPages
     }
@@ -176,10 +180,10 @@ const clearTimeoutSet = () => {
         clearTimeout(timeSet.value)
         timeSet.value = null
     }
-};
+}
 onUnmounted(() => {
     clearTimeoutSet()
-});
+})
 
 
 const searchText = ref('')
@@ -200,8 +204,8 @@ const addToHistory = (history: string) => {
         const newHistory = searchHistory.value.filter(item => item !== history)
         // 添加
         newHistory.unshift(history)
-        // 最多8条
-        if (newHistory.length > 8) {
+        // 最多20条
+        if (newHistory.length > 20) {
             newHistory.pop()
         }
         searchHistory.value = newHistory
@@ -217,6 +221,7 @@ const handleSearch = () => {
         // 清空输入框
         searchText.value = ''
         showSearch.value = false
+        delAll.value = false
     }
 }
 
@@ -303,6 +308,58 @@ const displayData = computed(() => {
     const cnt = isHighDensity.value ? 7 : rowData.data.length
     return rowData.data.slice(0, cnt)
 })
+
+
+// 历史记录展开功能
+const isExpanded = ref(false)
+const historyContainer = ref<HTMLDivElement | null>(null)
+const showToggle = ref(true)
+
+// 计算是否需要显示展开按钮
+const updateShowToggle = () => {
+    if (!historyContainer.value) return
+    const contentContainer = historyContainer.value.querySelector('.flex.flex-wrap') as HTMLElement
+    if (!contentContainer) {
+        showToggle.value = false
+        return
+    }
+
+  // 容器测量真实高度
+    const clone = contentContainer.cloneNode(true) as HTMLElement
+    document.body.appendChild(clone)
+    showToggle.value = clone.scrollHeight > 40
+    document.body.removeChild(clone)
+}
+
+watch(
+    searchHistory,() => {
+        // 用nextTick确保DOM已更新（历史记录项已渲染）
+        nextTick(() => {
+            updateShowToggle()
+        })
+    },
+    { immediate: true } // 初始化时立即执行一次
+)
+
+// 监听窗口大小变化
+const handleResize = () => {
+    nextTick(() => {
+        updateShowToggle()
+    })
+}
+
+onMounted(() => {
+    window.addEventListener('resize', handleResize)
+})
+
+onUnmounted(() => {
+    window.removeEventListener('resize', handleResize)
+})
+
+//切换展开/收起状态
+const toggleExpanded = () => {
+    isExpanded.value = !isExpanded.value
+}
 
 
 </script>
