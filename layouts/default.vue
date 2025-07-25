@@ -1,12 +1,14 @@
 <template>
     <div class="flex justify-center">
         <div class="w-full justify-center flex flex-col">
-            <Header />
-            <Ad/>
+            <IndexHeader />
+            <IndexAd/>
             <slot class="mx-auto px-16"/>
-            <Aside/>
-            <Bottom/>
+            <IndexAside/>
+            <IndexBottom/>
         </div>
         
     </div>
 </template> 
+<script setup lang="ts">
+</script>

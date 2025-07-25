@@ -52,9 +52,9 @@
                     </div>
                 </div>
                 <a href="https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?spm=a21bo.tmall/a.yingxiao.d2.3c5cc3d55hE1kj&wh_pid=daily-568041&itemId=838730796852%2C643255510891" target="_blank" class="w-[240px] h-[160px] bg-[rgb(247,247,247)] rounded-xl">
-                    <div class="div1 mt-4 flex justify-between mx-4">
+                    <div class=" mt-4 flex justify-between mx-4 group">
                         <span class="font-bold">天猫U先</span>
-                        <Righticon class="icon1 w-3 h-3 mt-1" />
+                        <RightIcon class=" rightIcon" />
                     </div>
                     <div class="flex flex-row mt-4 space-x-8 justify-center items-center">
                         <div class="w-[72px] h-[98px] flex justify-center items-center flex-col">
@@ -70,10 +70,10 @@
             </div>
             <div class="flex mt-4 space-x-4">
                 <a href="https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?spm=a21bo.tmall/a.yingxiao.d1.3c5cc3d55hE1kj&wh_pid=daily-554070&itemId=678055813659" target="_blank" class="w-[240px] h-[160px] bg-[rgb(247,247,247)] rounded-xl">
-                    <div class="flex flex-row items-center justify-center mt-2 div2">
+                    <div class="flex flex-row items-center justify-center mt-2 group">
                         <span class="font-bold">百亿补贴 · 买贵必赔</span>
                         <div class="font-bold text-white flex ml-2 justify-center items-center rounded-md w-10 h-4 bg-[rgb(255,0,54)] text-[10px]">限时秒</div>
-                        <Righticon class="icon2 w-3 h-3 ml-1" />
+                        <RightIcon class="rightIcon" />
                     </div>
                     <div class="flex justify-between mt-4 mx-4">
                         <img class="w-24 h-24" src="https://img.alicdn.com/bao/upload/O1CN01Xw0lUE1iPzownoVGb_!!6000000004406-2-yinhe.png"/>
@@ -85,9 +85,9 @@
                     </div>
                 </a>
                 <a target="_blank" href="https://login.taobao.com/havanaone/login/login.htm?bizName=taobao&redirectURL=https%3A%2F%2Fhuodong.taobao.com%2Fwow%2Fz%2Ftbhome%2Ftbpc-venue%2Fgov-subsidy%3Fspm%3Da21bo.tmall%2Fa.yingxiao.d5.3c5cc3d55hE1kj%26itemId%3D730597762691%252C709278367512" class="w-[240px] h-[160px] bg-[rgb(230,230,230)] rounded-xl">
-                    <div class="mt-4 flex justify-between mx-4 div3">
+                    <div class="mt-4 flex justify-between mx-4 group">
                         <span class="font-bold">国家补贴</span>
-                        <Righticon class="icon3 w-3 h-3 mt-1" />
+                        <RightIcon class="rightIcon" />
                     </div>
                     <div class="flex flex-row mt-4 space-x-8 justify-center items-center">
                         <div class="w-[72px] h-[98px] flex justify-center items-center flex-col">
@@ -127,12 +127,12 @@
             </div>
             <div class="flex flex-col mt-4">
                 <a target="_blank" href="https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?spm=a21bo.tmall/a.yingxiao.d1.3c5cc3d55hE1kj&wh_pid=daily-554070&itemId=678055813659" class="min-res-110:w-[240px] w-[495px] h-[160px] bg-[rgb(247,247,247)] rounded-xl">
-                        <div class="flex flex-row items-center justify-between mt-2">
+                        <div class="flex flex-row items-center justify-between mt-2 group">
                             <div class="flex ml-4">
                                 <span class="font-bold">百亿补贴 · 买贵必赔</span>
                                 <div class="font-bold text-white flex ml-2 mt-1 justify-center items-center rounded-md w-10 h-4 bg-[rgb(255,0,54)] text-[10px]">限时秒</div>
                             </div>
-                            <Righticon class="icon2 w-3 h-3 mr-4" />
+                            <RightIcon class="rightIcon" />
                         </div>
                     <div class="flex justify-center">
                         <div class="flex flex-row">
@@ -159,12 +159,12 @@
                 </a>
                 <div class="flex mt-4 flex-row space-x-4">
                     <a target="_blank" href="https://web.m.taobao.com/app/ltao-fe/tbmx-pc-page/home?spm=a21bo.tmall/a.yingxiao.d5_1.3c5cc3d55hE1kj&spmb=tbmspcnew&itemId=535907991921" class="min-res-110:w-[112px] w-[240px] h-[160px] bg-[rgb(247,247,247)] rounded-xl">
-                        <div class="flex justify-between items-center div2 mt-2 ml-3">
-                            <div class=" flex">
+                        <div class="flex justify-between items-center mt-2 ml-3 group">
+                            <div class=" flex ">
                                 <span class="font-bold">淘宝秒杀</span>
                                 <div class="min-res-110:hidden text-white flex ml-2 mt-1 justify-center items-center rounded-md w-10 h-4 bg-orange-400 text-[10px]">超低价</div>
                             </div>
-                            <Righticon class="icon2 w-3 h-3 mr-4" />
+                            <RightIcon class="rightIcon" />
                         </div>
                         <div class="justify-center space-x-8 mt-2 flex">
                             <div class="items-center justify-center flex flex-col">
@@ -178,9 +178,9 @@
                         </div>
                     </a>
                     <a target="_blank" href="https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?spm=a21bo.tmall/a.yingxiao.d4.3c5cc3d55hE1kj&wh_pid=daily-551925&disableNav=YES&status_bar_transparent=true&itemId=855022988509" class="min-res-110:w-[112px] w-[240px] h-[160px] bg-[rgb(247,247,247)] rounded-xl">
-                        <div class="flex justify-between items-center div2 mt-2 ml-4">
+                        <div class="flex justify-between items-center mt-2 ml-4 group">
                             <span class="font-bold">聚划算</span>
-                            <Righticon class="icon2 w-3 h-3 mr-4" />
+                            <RightIcon class="rightIcon" />
                         </div>
                         <div class="justify-center space-x-8 mt-2 flex">
                             <div class="items-center justify-center flex flex-col">
@@ -197,9 +197,9 @@
             </div>
             <div class="flex flex-col mt-4">
                 <a target="_blank" href="https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?spm=a21bo.tmall/a.yingxiao.d2.3c5cc3d55hE1kj&wh_pid=daily-568041&itemId=838730796852%2C643255510891" class="w-[240px] h-[160px] bg-[rgb(247,247,247)] rounded-xl">
-                    <div class="div1 mt-4 flex justify-between mx-4">
+                    <div class="div1 mt-4 flex justify-between mx-4 group">
                         <span class="font-bold">天猫U先</span>
-                        <Righticon class="icon1 w-3 h-3 mt-1" />
+                        <RightIcon class="icon1 w-3 h-3 mt-1 group-hover:text-[rgb(255,0,54)]" />
                     </div>
                     <div class="flex flex-row mt-4 space-x-8 justify-center items-center">
                         <div class="w-[72px] h-[98px] flex justify-center items-center flex-col">
@@ -213,9 +213,9 @@
                     </div>
                 </a>
                 <a target="_blank" href="https://huodong.taobao.com/wow/z/tbhome/tbpc-venue/gov-subsidy?spm=a21bo.tmall/a.yingxiao.d5_1.3c5cc3d55hE1kj&itemId=730597762691%2C709278367512" class="w-[240px] mt-4 h-[160px] bg-[rgb(230,230,230)] rounded-xl">
-                    <div class="mt-4 flex justify-between mx-4 div3">
+                    <div class="mt-4 flex justify-between mx-4 group">
                         <span class="font-bold">国家补贴</span>
-                        <Righticon class="icon3 w-3 h-3 mt-1" />
+                        <RightIcon class="rightIcon" />
                     </div>
                     <div class="flex flex-row mt-4 space-x-8 justify-center items-center">
                         <div class="w-[72px] h-[98px] flex justify-center items-center flex-col">
@@ -235,13 +235,7 @@
 <script setup lang="ts">
 </script>
 <style scoped>
-.div1:hover .icon1{
-    color:rgb(255,0,54);
-}
-.div2:hover .icon2{
-    color:rgb(255,0,54);
-}
-.div3:hover .icon3{
-    color:rgb(255,0,54);
+.rightIcon{
+    @apply w-3 h-3 mt-1 group-hover:text-[rgb(255,0,54)]
 }
 </style>

@@ -1,0 +1,60 @@
+export const headerData = {
+    data:[
+        {
+            name: '淘宝首页',
+            arr: [],
+            isIcon: false,
+            component: '',
+            href: 'https://www.taobao.com/?spm=a21bo.tmall/a.1581860521.1.3c5cc3d5GQav4K'
+        },
+        {
+            name: '已买到的宝贝',
+            arr: [],
+            isIcon: false,
+            component: '',
+            href: 'https://login.taobao.com/havanaone/login/login.htm?bizName=taobao&redirectURL=http%3A%2F%2Fbuyertrade.taobao.com%2Ftrade%2Fitemlist%2Flist_bought_items.htm%3Fspm%3Da21bo.tmall%252Fa.bought.1.3c5cc3d50TmUVi'
+        },
+        {
+            name: '我的淘宝',
+            arr: ['我的足迹','我的卡券包'],
+            isIcon: false,
+            component: '',
+            href: 'https://login.taobao.com/havanaone/login/login.htm?bizName=taobao&redirectURL=http%3A%2F%2Fbuyertrade.taobao.com%2Ftrade%2Fitemlist%2Flist_bought_items.htm%3Fspm%3Da21bo.tmall%252Fa.bought.1.3c5cc3d50TmUVi'
+        },
+        {
+            name: '购物车',
+            arr: [],
+            isIcon: true,
+            component: 'Shopping',
+            href: 'https://login.taobao.com/havanaone/login/login.htm?bizName=taobao&redirectURL=http%3A%2F%2Fbuyertrade.taobao.com%2Ftrade%2Fitemlist%2Flist_bought_items.htm%3Fspm%3Da21bo.tmall%252Fa.bought.1.3c5cc3d50TmUVi'
+        },
+        {
+            name: '收藏夹',
+            arr: ['收藏的宝贝','收藏的店铺'],
+            isIcon:true,
+            component: 'Collection',
+            href: 'https://login.taobao.com/havanaone/login/login.htm?bizName=taobao&redirectURL=http%3A%2F%2Fbuyertrade.taobao.com%2Ftrade%2Fitemlist%2Flist_bought_items.htm%3Fspm%3Da21bo.tmall%252Fa.bought.1.3c5cc3d50TmUVi'
+        },
+        {
+            name: '免费开店',
+            arr: ['淘宝开店','天猫开店','开直播店'],
+            isIcon: false,
+            component: '',
+            href: 'https://ishop.taobao.com/openshop/tb_open_shop_landing.htm?source=tbweb1st'
+        },
+        {
+            name: '千牛卖家中心',
+            arr: ['开店入驻','已卖出的宝贝','出售中的宝贝','卖家服务市场','卖家培训中心','体检中心','淘宝规则','电商学习中心'],
+            isIcon: false,
+            component: '',
+            href: 'https://loginmyseller.taobao.com/?from=taobaoindex&f=top&style=&sub=true&redirect_url=https%3A%2F%2Fmyseller.taobao.com%2Fhome.htm%2FQnworkbenchHome%2F'
+        },
+        {
+            name: '帮助中心', 
+            arr: ['官方客服','商家客服','消息中心','意见反馈','举报中心'],
+            isIcon: false,
+            component: '',
+            href: 'https://consumerservice.taobao.com/'
+        }
+    ]
+}

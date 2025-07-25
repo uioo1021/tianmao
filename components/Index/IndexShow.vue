@@ -1,7 +1,7 @@
 <template>
     <div class="flex justify-center">
-        <div class="flex flex-wrap gap-x-2 gap-y-2 mt-4 l justify-center min-res-120:max-w-[1008px] max-w-[1516px] min-res-110:max-w-[1269px]">
-            <a class="p-1 pb-4  hover:border-[rgb(255,0,54)] border-white border w-[246px] rounded-lg  h-[360px]" :href="item.href" target="_blank" v-for="(item,index) in bottomData.data" :key="index">
+        <div class="show-div">
+            <a class="show-top" :href="item.href" target="_blank" v-for="(item,index) in showData.data" :key="index">
                 <img class="rounded-lg w-[240px] h-[240px]" :src="item.img" />
                 <div  class="ml-2 mt-2 max-h-[50px] text-clip  overflow-hidden">
                     <span v-if="item.isIcon" class=" text-[rgb(255,0,54)] font-bold mr-2">天猫</span>
@@ -24,15 +24,16 @@
                 </div>
                 <div class="flex-wrap leading-[2] text-[12px]">
                     天猫商城作为国际化综合性购物超市，整合了大量国内外品牌商和生产商，为商家和消费者之间提供一站式耐克阿迪达斯锐步安德玛匡威始祖鸟羽绒服等淘宝网页购物服务。涵盖了从电视机，空调，洗衣机，冰箱，美的，skyworth，大金等几乎全品类的商品。其中
-                    <a class="text-[rgb(255,0,54)] ml-[-3px]" target="_blank" href="https://bk.taobao.com/k/diannao_251/?spm=a21bo.tmall/a.seoinject.24.1a1dc3d5ctNOQY">数码电脑</a>、
-                    <a class="text-[rgb(255,0,54)] ml-[-4px]" target="_blank" href="https://bk.taobao.com/k/bijibendiannao_273/?spm=a21bo.tmall/a.seoinject.25.1a1dc3d5ctNOQY">笔记本</a>、
-                    <a class="text-[rgb(255,0,54)] ml-[-4px]" target="_blank" href="https://bk.taobao.com/k/pingban_233/?spm=a21bo.tmall/a.seoinject.26.1a1dc3d5ctNOQY">平板</a>、
-                    <a class="text-[rgb(255,0,54)] ml-[-4px]" target="_blank" href="https://bk.taobao.com/k/jianpan_285/?spm=a21bo.tmall/a.seoinject.27.1a1dc3d5ctNOQY">键盘鼠标</a>、
-                    <a class="text-[rgb(255,0,54)] ml-[-4px]" target="_blank" href="https://bk.taobao.com/k/erji_265/?spm=a21bo.tmall/a.seoinject.29.1a1dc3d5ctNOQY">耳机</a>、
-                    <a class="text-[rgb(255,0,54)] ml-[-4px]" target="_blank" href="https://bk.taobao.com/k/xiaomi_79/?spm=a21bo.tmall/a.seoinject.30.1a1dc3d5ctNOQY">小米</a>、
-                    <a class="text-[rgb(255,0,54)] ml-[-4px]" target="_blank" href="https://bk.taobao.com/k/huawei_82/?spm=a21bo.tmall/a.seoinject.31.1a1dc3d5ctNOQY">华为</a>、
-                    <a class="text-[rgb(255,0,54)] ml-[-4px]" target="_blank" href="https://bk.taobao.com/k/pingguo_81/?spm=a21bo.tmall/a.seoinject.32.1a1dc3d5ctNOQY">苹果</a>、
-                    <a class="text-[rgb(255,0,54)] ml-[-4px]" target="_blank" href="https://bk.taobao.com/k/iphone16_424?spm=a21bo.tmall/a.seoinject.33.1a1dc3d5ctNOQY">iphone</a>
+                    <a 
+                        class="text-[rgb(255,0,54)] ml-[-3px]" 
+                        target="_blank" 
+                        href="item.href"
+                        v-for="(item,index) in showData.bottomData" 
+                        :key="index"
+                    >
+                        {{ item.title }}
+                        <span class="text-black" v-show="index !== showData.bottomData.length - 1">、</span>
+                    </a>
                     等更是赢得了热门口碑和评价。
                 </div>
                 <div class="flex-wrap leading-[2] text-[12px]">
@@ -45,11 +46,19 @@
                     <a class="text-[rgb(255,0,54)] m-[-3px]" target="_blank" href="https://jianghu.taobao.com/topicId/123402?spm=a21bo.tmall/a.seoinject.46.1a1dc3d5ctNOQY">购物体验</a>
                     ，致力于成为全球品牌与零售商的重要第三方线上及移动商业平台。
                 </div>
-        </div> 
-    </div>
+            </div> 
+        </div>
     </div>
     
 </template>
 <script lang="ts" setup>
-import { bottomData } from '~/data/bottomData.js'
+import { showData } from '~/data/index/show.js'
 </script>
+<style scoped>
+.show-div{
+    @apply flex flex-wrap gap-x-2 gap-y-2 mt-4 justify-center min-res-120:max-w-[1008px] max-w-[1516px] min-res-110:max-w-[1269px];
+}
+.show-top{
+    @apply p-1 pb-4  hover:border-[rgb(255,0,54)] border-white border w-[246px] rounded-lg  h-[360px];
+}
+</style>

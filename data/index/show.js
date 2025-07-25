@@ -1,4 +1,44 @@
-export const bottomData = {
+import { bottomData } from "./bottomData";
+
+export const showData = {
+    bottomData: [
+        {
+            title: '数码电脑',
+            href:"https://bk.taobao.com/k/diannao_251/?spm=a21bo.tmall/a.seoinject.24.1a1dc3d5ctNOQY"
+        },
+        {
+            title: '笔记本',
+            href:"https://bk.taobao.com/k/bijibendiannao_273/?spm=a21bo.tmall/a.seoinject.25.1a1dc3d5ctNOQY"
+        },
+        {
+            title: '平板',
+            href:"https://bk.taobao.com/k/pingban_233/?spm=a21bo.tmall/a.seoinject.26.1a1dc3d5ctNOQY"
+        },
+        {
+            title: '键盘鼠标',
+            href:"https://bk.taobao.com/k/jianpan_285/?spm=a21bo.tmall/a.seoinject.27.1a1dc3d5ctNOQY"
+        },
+        {
+            title: '耳机',
+            href:"https://bk.taobao.com/k/erji_265/?spm=a21bo.tmall/a.seoinject.29.1a1dc3d5ctNOQY"
+        },
+        {
+            title: '小米',
+            href:"https://bk.taobao.com/k/xiaomi_79/?spm=a21bo.tmall/a.seoinject.30.1a1dc3d5ctNOQY"
+        },
+        {
+            title: '华为',
+            href:"https://bk.taobao.com/k/huawei_82/?spm=a21bo.tmall/a.seoinject.31.1a1dc3d5ctNOQY"
+        },
+        {
+            title: '苹果',
+            href:"https://bk.taobao.com/k/pingguo_81/?spm=a21bo.tmall/a.seoinject.32.1a1dc3d5ctNOQY"
+        },
+        {
+            title: 'iphone',
+            href:"https://bk.taobao.com/k/iphone16_424?spm=a21bo.tmall/a.seoinject.33.1a1dc3d5ctNOQY"
+        },
+    ],
     data:[
         {
             href:"https://item.taobao.com/item.htm?id=892602977456&scm=1007.40986.420852.0&pvid=ab995baa-14f4-4a31-b70c-5e61afe645b1&xxc=home_recommend&skuId=5739380784298&mi_id=C1SUx2XKshSHAzCysEQoQ2rc1Se71_TIYPwn-xv_pYw5ZkRpHCGYEzNZmgVeYQI0ohm4DM-1AY3lOgSllqV95Q&utparam=%7B%22abid%22%3A%220%22%2C%22item_ctr%22%3A0%2C%22x_object_type%22%3A%22item%22%2C%22pc_pvid%22%3A%22ab995baa-14f4-4a31-b70c-5e61afe645b1%22%2C%22item_cvr%22%3A0%2C%22mix_group%22%3A%22%22%2C%22pc_scene%22%3A%2220001%22%2C%22item_ecpm%22%3A0%2C%22aplus_abtest%22%3A%220f78f44a328cdc2b3168195ccf94b854%22%2C%22tpp_buckets%22%3A%2230986%23420852%23module%22%2C%22x_object_id%22%3A892602977456%2C%22ab_info%22%3A%2230986%23420852%23-1%23%22%7D&priceTId=213e057f17527476325548939e1b4a",
