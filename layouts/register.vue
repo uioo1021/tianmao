@@ -1,8 +1,8 @@
 <template>
     <div>
-        <RegisterHeader/>
+        <IndexHeader />
         <slot/>
-        <RegisterFooter/>
+        <IndexBottom/>
     </div>
 </template>
 <script setup lang="ts">

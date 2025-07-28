@@ -1,0 +1,32 @@
+{
+    "mainCenterData": {
+        "smallData" : [
+            {
+                "img" :"/imgs/image1.png",
+                "href" : "https://chaoshi.tmall.com/?spm=a21bo.tmall/a.banner.d2.3c5cc3d55hE1kj&custom_content_source=a3204.29961855"
+            },
+            {
+                "img" :"/imgs/image2.png",
+                "href" : "https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?wh_pid=daily-561441&disableNav=YES&status_bar_transparent=true&custom_content_source=a2113w.30046077"
+            },
+            {
+                "img" :"/imgs/image3.png",
+                "href" : "https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?spm=a21bo.tmall/a.banner.d5.3c5cc3d55hE1kj&wh_pid=daily-569253&disableNav=YES&status_bar_transparent=true&custom_content_source=a2113w.30406413"
+            }
+        ],
+        "bigData" : [
+            {
+                "img" :"https://img.alicdn.com/imgextra/i1/O1CN01TeIRXy1FtCUoTRRiS_!!6000000000544-2-tps-480-672.png",
+                "href" : "https://chaoshi.tmall.com/?spm=a21bo.tmall/a.banner.d2.3c5cc3d55hE1kj&custom_content_source=a3204.29961855"
+            },
+            {
+                "img" :"https://img.alicdn.com/imgextra/i2/O1CN01R3b2vD1uC3RAGkfGC_!!6000000006000-2-tps-480-672.png",
+                "href" : "https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?wh_pid=daily-561441&disableNav=YES&status_bar_transparent=true&custom_content_source=a2113w.30046077"
+            },
+            {
+                "img" :"https://img.alicdn.com/imgextra/i1/O1CN01CpjXan1m08BI7AuZx_!!6000000004891-0-tps-480-672.jpg",
+                "href" : "https://huodong.taobao.com/wow/a/act/tao/dailygroup/23509/24308/wupr?wh_pid=daily-554070&custom_content_source=608.29877528"
+            }
+        ]
+    }
+}

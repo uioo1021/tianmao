@@ -1,6 +1,6 @@
 <template>
-  <div class="mainLeft">
-    <div class="mainLeft-div">
+  <div class="flex cursor-pointer relative">
+    <div class="mainLeft">
       <div class="mainLeft-top">
         <span class="mainLeft-top-text">分类</span>
         <span class="popup-animation mainLeft-top-new">NEW</span>
@@ -13,23 +13,60 @@
         <div class="mainLeft-title">
           <component class="mainLeft-title-icon" :is="getIconComponent(item.icon)" />
           <div class="flexBox">
-            <a @mouseover="scrollToSection(item.id1)" :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name1)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="mr-2 hover:text-[rgb(255,0,54)]">{{ item.name1 }}</a>
+            <a 
+              @mouseover="scrollToSection(item.id1)" 
+              :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name1)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" 
+              target="_blank" 
+              class="mr-2 hover:text-[rgb(255,0,54)]"
+            >
+              {{ item.name1 }}
+            </a>
             /
-            <a @mouseover="scrollToSection(item.id2)" :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name2)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="mr-2 ml-2 hover:text-[rgb(255,0,54)]">{{ item.name2 }}</a>
+            <a 
+              @mouseover="scrollToSection(item.id2)" 
+              :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name2)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" 
+              target="_blank" 
+              class="mr-2 ml-2 hover:text-[rgb(255,0,54)]"
+            >
+              {{ item.name2 }}
+            </a>
             /
-            <a @mouseover="scrollToSection(item.id3)" :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name3)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="ml-2 hover:text-[rgb(255,0,54)]">{{ item.name3 }}</a>
+            <a 
+              @mouseover="scrollToSection(item.id3)" 
+              :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(item.name3)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" 
+              target="_blank" 
+              class="ml-2 hover:text-[rgb(255,0,54)]"
+            >
+                {{ item.name3 }}
+            </a>
           </div> 
         </div>
 
         <div class="mainLeft-hover">
-          <div class="mainLeft-hover-div scrollbar-custom ">
-            <div :id="arrItem.id" class="flex flex-row mt-4" v-for="(arrItem, arrIndex) in item.arr" :key="arrIndex">
+          <div class="mainLeft-hover-item scrollbar-custom ">
+            <div 
+              :id="arrItem.id" 
+              class="flex flex-row mt-4 " 
+              v-for="(arrItem, arrIndex) in item.arr" 
+              :key="arrIndex"
+            >
               <div class="mainLeft-hover-title">
-                <a :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(arrItem.name)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank">{{ arrItem.name }}</a>
+                <a 
+                  :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(arrItem.name)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" 
+                  target="_blank"
+                >
+                  {{ arrItem.name }}
+                </a>
                 <RightIcon class="mainLeft-rightIcon" />
               </div>
-              <div class="mainLeft-hover-item">
-                <a :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(arr2Item)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="flex whitespace-nowrap cursor-pointer hover:text-[rgb(255,0,54)]" v-for="(arr2Item,arr2Index) in arrItem.arr" :key="arr2Index">{{ arr2Item }}</a>
+              <div class="mainLeft-hover-arr">
+                <a 
+                  :href="`https://s.taobao.com/search?ie=utf8&q=${encodeURIComponent(arr2Item)}&spm=a21bo.tmall%2Fa.201856-fline.1.1778c3d5oXRrYY&tab=mall`" target="_blank" class="flex whitespace-nowrap cursor-pointer hover:text-[rgb(255,0,54)]" 
+                  v-for="(arr2Item,arr2Index) in arrItem.arr" 
+                  :key="arr2Index"
+                >
+                  {{ arr2Item }}
+                </a>
               </div>
             </div>
           </div>
@@ -40,7 +77,7 @@
 </template>
 
 <script setup lang="ts">
-import { listData } from '~/data/index/listData.js'
+import { listData } from '~/data/index/mainLeft.json'
 
 const getIconComponent = (iconName: string) => {
     const components = {
@@ -65,7 +102,7 @@ const scrollToSection = (sectionId: string) => {
   }
 
   // 获取滚动容器对应hover的组
-  const activeContainer = document.querySelector('.group:hover .mainLeft-hover-div')
+  const activeContainer = document.querySelector('.group:hover .mainLeft-hover-item')
   const scrollContainer = activeContainer as HTMLElement
 
   // 找目标元素
@@ -127,9 +164,6 @@ const scrollToSection = (sectionId: string) => {
   @apply flex justify-between items-center
 }
 .mainLeft {
-    @apply flex cursor-pointer relative;
-}
-.mainLeft-div {
     @apply w-[240px] bg-[rgb(255,0,54)] rounded-lg;
 }
 .mainLeft-top {
@@ -156,8 +190,8 @@ const scrollToSection = (sectionId: string) => {
 .group:hover .mainLeft-hover {
     @apply opacity-100 visible !important;
 }
-.mainLeft-hover-div {
-    @apply  ml-4 my-4 min-res-120:w-[520px] min-res-110:w-[770px] w-[990px]  max-h-[570px] overflow-y-auto;
+.mainLeft-hover-item {
+    @apply  ml-4 min-res-120:w-[520px] min-res-110:w-[770px] w-[990px]  max-h-[570px] overflow-y-auto my-4;
 }
 .mainLeft-hover-title {
     @apply hover:text-[rgb(255,0,54)] cursor-pointer whitespace-nowrap  flex-row flex;
@@ -165,7 +199,7 @@ const scrollToSection = (sectionId: string) => {
 .mainLeft-rightIcon {
     @apply h-[10px] mt-2 ml-1 w-[10px];
 }
-.mainLeft-hover-item {
-    @apply flex flex-wrap gap-x-4 gap-y-4 pl-10;
+.mainLeft-hover-arr {
+    @apply flex flex-wrap gap-x-4 pl-10 gap-y-2;
 }
 </style>

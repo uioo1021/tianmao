@@ -1,15 +1,26 @@
 <template>
     <div class="flex justify-center">
-        <div class="show-div">
-            <a class="show-top" :href="item.href" target="_blank" v-for="(item,index) in showData.data" :key="index">
-                <img class="rounded-lg w-[240px] h-[240px]" :src="item.img" />
-                <div  class="ml-2 mt-2 max-h-[50px] text-clip  overflow-hidden">
-                    <span v-if="item.isIcon" class=" text-[rgb(255,0,54)] font-bold mr-2">天猫</span>
+        <div class="show">
+            <a 
+                class="show-top" 
+                :href="item.href" 
+                target="_blank" 
+                v-for="(item,index) in showData.data" 
+                :key="index"
+            >
+                <img class="show-top-img" :src="item.img" />
+                <div class="show-top-logo">
+                    <span 
+                        v-if="item.isIcon" 
+                        class=" text-[rgb(255,0,54)] font-bold mr-2"
+                    >
+                        天猫
+                    </span>
                     <span class="flex-wrap text-[14px]">{{ item.title }}</span>
                 </div>
                 <div class="ml-2 mt-6">
-                    <span class=" text-[rgb(255,0,54)] font-bold text-[12px] mr-1">¥</span>
-                    <span class="text-[rgb(255,0,54)] font-bold text-[20px]">{{ item.price }}</span>
+                    <span class="text-[rgb(255,0,54)] font-bold text-[12px] mr-1">¥</span>
+                    <span class="show-top-price">{{ item.price }}</span>
                 </div>
             </a>
             <div class="flex pb-10 flex-col mt-10">
@@ -19,7 +30,13 @@
                 </div>
                 <div class="text-[12px] mb-1.5">
                     天猫商城，理想生活的起点，在这里时尚潮流与实用
-                    <a class="text-[rgb(255,0,54)] m-[-3px]" href="https://goods.taobao.com/?spm=a21bo.tmall/a.seoinject.1.1a1dc3d5ctNOQY" target="_blank">好物</a>
+                    <a 
+                        class="text-[rgb(255,0,54)] m-[-3px]"
+                        href="https://goods.taobao.com/?spm=a21bo.tmall/a.seoinject.1.1a1dc3d5ctNOQY" 
+                        target="_blank"
+                    >
+                        好物
+                    </a>
                         齐聚，品质与优惠并行。无论你是追求时尚的弄潮儿，还是注重生活品质的居家达人，天猫都能为你打造专属的理想生活。
                 </div>
                 <div class="flex-wrap leading-[2] text-[12px]">
@@ -32,7 +49,12 @@
                         :key="index"
                     >
                         {{ item.title }}
-                        <span class="text-black" v-show="index !== showData.bottomData.length - 1">、</span>
+                        <span 
+                            class="text-black" 
+                            v-show="index !== showData.bottomData.length - 1"
+                        >
+                            、
+                        </span>
                     </a>
                     等更是赢得了热门口碑和评价。
                 </div>
@@ -41,9 +63,21 @@
                 </div>
                 <div class="text-[12px] mt-1.5">
                     天猫提供100%品质保证的商品，7天无理由退货的售后服务，天猫将通过
-                    <a class="text-[rgb(255,0,54)] m-[-3px]" target="_blank" href="https://pc.taobao.com/?spm=a21bo.tmall/a.seoinject.45.1a1dc3d5ctNOQY">淘宝客户端</a>
+                    <a 
+                        class="text-[rgb(255,0,54)] m-[-3px]" 
+                        target="_blank" 
+                        href="https://pc.taobao.com/?spm=a21bo.tmall/a.seoinject.45.1a1dc3d5ctNOQY"
+                    >
+                        淘宝客户端
+                    </a>
                     继续提升消费者
-                    <a class="text-[rgb(255,0,54)] m-[-3px]" target="_blank" href="https://jianghu.taobao.com/topicId/123402?spm=a21bo.tmall/a.seoinject.46.1a1dc3d5ctNOQY">购物体验</a>
+                    <a 
+                        class="text-[rgb(255,0,54)] m-[-3px]" 
+                        target="_blank" 
+                        href="https://jianghu.taobao.com/topicId/123402?spm=a21bo.tmall/a.seoinject.46.1a1dc3d5ctNOQY"
+                    >
+                        购物体验
+                    </a>
                     ，致力于成为全球品牌与零售商的重要第三方线上及移动商业平台。
                 </div>
             </div> 
@@ -52,13 +86,22 @@
     
 </template>
 <script lang="ts" setup>
-import { showData } from '~/data/index/show.js'
+import { showData } from '~/data/index/showData.json'
 </script>
 <style scoped>
-.show-div{
+.show{
     @apply flex flex-wrap gap-x-2 gap-y-2 mt-4 justify-center min-res-120:max-w-[1008px] max-w-[1516px] min-res-110:max-w-[1269px];
 }
 .show-top{
     @apply p-1 pb-4  hover:border-[rgb(255,0,54)] border-white border w-[246px] rounded-lg  h-[360px];
+}
+.show-top-img{
+    @apply rounded-lg w-[240px] h-[240px];
+}
+.show-top-logo{
+    @apply ml-2 mt-2 max-h-[50px] text-clip overflow-hidden;
+}
+.show-top-price{
+    @apply text-[rgb(255,0,54)] font-bold text-[20px];
 }
 </style>
